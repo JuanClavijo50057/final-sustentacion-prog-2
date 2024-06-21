@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Visita al Cine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-input {
+            width: 150px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #444;
+            color: #fff;
+            font-size: 16px;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+
+        .form-select option {
+            background-color: #444;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="/image.png" alt="Cine Colombia Logo">
+    <div class="container">
+        <h2 class="mt-5">Registro para Asistir al Cine</h2>
+        <form action="/agregar-registro" object="irCine" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="correo_electronico">Correo Electronico</label>
+                <input type="text" class="form-control" id="correo_electronico" name="correo_electronico" required>
+            </div>
+            <div class="form-group">
+                <label for="pelicula_ver">Pelicula a Ver</label>
+                <input type="text" class="form-control" id="pelicula_ver" name="pelicula_ver" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha" class="form-label">Fecha</label>
+                <input type="date" class="form-input" id="fecha" name="fecha">
+            </div>
+            <div class="form-group">
+                <label for="hora" class="form-label">Hora</label>
+                <input type="time" class="form-input" id="hora" name="hora">
+            </div>
+            <div class="form-group">
+                <label for="cantidad_adultos">Cantidad de Adultos</label>
+                <input type="number" class="form-control" id="cantidad_adultos" name="cantidad_adultos" required>
+            </div>
+            <div class="form-group">
+                <label for="cantidad_niños">Cantidad de Niños</label>
+                <input type="number" class="form-control" id="cantidad_niños" name="cantidad_niños" required>
+            </div>
+            <div class="form-group">
+                <label for="preferencia_asientos" class="form-label">Preferencia de Asientos</label>
+                <select name="preferencia_asientos" id="preferencia_asientos" class="form-select">
+                    <option value="">Seleccionar</option>
+                    <option value="delanteros">Delanteros</option>
+                    <option value="centrales">Centrales</option>
+                    <option value="traseros">Traseros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>¿Desea recibir notificaciones sobre futuros eventos?</label><br>
+                <div class="form-check form-check-inLine">
+                    <input class="form-check-input" type="radio" name="notificaciones" id="tipoTrue" value="SI">
+                    <label class="form-check-label" for="tipoTrue">Si</label>
+                </div>
+                <div class="form-group">
+                    <div class="form-check form-check-inLine">
+                        <input class="form-check-input" type="radio" name="notificaciones" id="tipoFalse" value="NO">
+                        <label class="form-check-label" for="tipoFalse">No</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

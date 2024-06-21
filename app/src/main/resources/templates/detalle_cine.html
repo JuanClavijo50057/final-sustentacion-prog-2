@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .back-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button button {
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Detalles del Registro</h1>
+        <div class="details">
+            <p><strong>Nombre:</strong> <span th:text="${cineAttribute.nombre}"></span></p>
+            <p><strong>Apellido:</strong> <span th:text="${cineAttribute.apellido}"></span></p>
+            <p><strong>Correo Electronico:</strong> <span th:text="${cineAttribute.correo_electronico}"></span></p>
+            <p><strong>Pelicula a Ver:</strong> <span th:text="${cineAttribute.pelicula_ver}"></span></p>
+            <p><strong>Fecha:</strong> <span th:text="${cineAttribute.fecha}"></span></p>
+            <p><strong>Hora:</strong> <span th:text="${cineAttribute.hora}"></span></p>
+            <p><strong>Cantidad de Adultos:</strong> <span th:text="${cineAttribute.cantidad_adultos}"></span></p>
+            <p><strong>Cantidad de Niños:</strong> <span th:text="${cineAttribute.cantidad_niños}"></span></p>
+            <p><strong>Preferencia de Asientos:</strong> <span th:text="${cineAttribute.preferencia_asientos}"></span></p>
+            <p><strong>¿Desea recibir notificaciones sobre futuros eventos?:</strong> <span th:text="${cineAttribute.notificaciones}"></span></p>
+        </div>
+        <div class="back-button">
+            <button></button>
+            <li><a th:href="@{/registros_cine}" type="" class="btn btn-primary">Volver a la Lista</a></li></button>
+        </div>
+    </div>
+</body>
+
+</html>

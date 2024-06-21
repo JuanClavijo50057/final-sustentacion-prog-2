@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Registros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .fondo-azul {
+            background-color: rgb(194, 208, 212);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="mt-5">Lista de Registros</h2>
+        <table border="2">
+            <thead>
+                <tr class="fondo-azul">
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo Electronico</th>
+                    <th>Pelicula</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Adultos</th>
+                    <th>Niños</th>
+                    <th>Preferencia de Asientos</th>
+                    <th>Notificaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="ircine : ${cineListAttribute}">
+                    <td th:text="${ircine.nombre}"></td>
+                    <td th:text="${ircine.apellido}"></td>
+                    <td th:text="${ircine.correo_electronico}"></td>
+                    <td th:text="${ircine.pelicula_ver}"></td>
+                    <td th:text="${ircine.fecha}"></td>
+                    <td th:text="${ircine.hora}"></td>
+                    <td th:text="${ircine.cantidad_adultos}"></td>
+                    <td th:text="${ircine.cantidad_niños}"></td>
+                    <td th:text="${ircine.preferencia_asientos}"></td>
+                    <td th:text="${ircine.notificaciones}"></td>
+                    <td>
+                        <li><a th:href="@{/detalle-cine/{id}(id = ${ircine.id})}">Ver en detalle</a></li>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Principal</a></li>
+                <li><a th:href="@{/agregar-registro}">Agregar Otro Registro</a></li>
+            </ul>
+        </nav>
+</body>
+
+</html>
